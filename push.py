@@ -37,5 +37,3 @@ def wellness():
 
 if __name__ == "__main__":
     wellness()
-    print(spo2)
-
