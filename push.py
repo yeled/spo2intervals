@@ -15,7 +15,8 @@ def get_median_spo2():
     data = response.json()
 
     # Extract spo2_value from each measurement
-    spo2_values = [measurement['spo2_value'] for measurement in data]
+    spo2_values = [measurement['spo2_value'] for measurement in data
+                    if measurement['spo2_confidence'] < 4]
 
     # Calculate and return median
     return statistics.median(spo2_values)
